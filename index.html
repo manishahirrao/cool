@@ -1935,18 +1935,14 @@
         <div class="gallery-item">
           <img src="assests/indutrial-cooler (2).jpeg" alt="CoolBox Cooler Installation" />
         </div>
-        <div class="gallery-item">
-          <img src="assests/indutrial-cooler (3).jpeg" alt="CoolBox Manufacturing" />
-        </div>
+       
         <div class="gallery-item">
           <img src="assests/indutrial-cooler (4).jpeg" alt="CoolBox Quality Check" />
         </div>
         <div class="gallery-item">
           <img src="assests/indutrial-cooler (5).jpeg" alt="CoolBox Factory" />
         </div>
-        <div class="gallery-item">
-          <img src="assests/cooler (1).jpeg" alt="CoolBox Cooler Range" />
-        </div>
+      
       </div>
     </div>
     
@@ -2276,6 +2272,85 @@
     });
   }, { threshold: 0.12 });
   revealEls.forEach(el => observer.observe(el));
+
+  // ── Legal Pages
+  function showLegalPage(type) {
+    const modal = document.getElementById('legalModal');
+    const title = document.getElementById('legalTitle');
+    const content = document.getElementById('legalContent');
+    
+    if (type === 'privacy') {
+      title.textContent = 'Privacy Policy';
+      content.innerHTML = `
+        <h3>Information We Collect</h3>
+        <p>We collect information you provide directly to us, such as when you contact us for inquiries, request quotes, or use our services.</p>
+        
+        <h3>How We Use Your Information</h3>
+        <ul>
+          <li>To respond to your inquiries and provide customer service</li>
+          <li>To process orders and arrange deliveries</li>
+          <li>To send you information about our products and services</li>
+          <li>To improve our website and services</li>
+        </ul>
+        
+        <h3>Information Sharing</h3>
+        <p>We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except as described in this policy.</p>
+        
+        <h3>Data Security</h3>
+        <p>We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.</p>
+        
+        <h3>Contact Information</h3>
+        <p>If you have questions about this Privacy Policy, please contact us at:</p>
+        <p><strong>Email:</strong> coolboxbhopal@gmail.com<br>
+        <strong>Phone:</strong> 9039835967, 8871882661<br>
+        <strong>Address:</strong> Shop No. 10, Near Kali Mandir, Chuna Bhatti, Bhopal, MP</p>
+      `;
+    } else if (type === 'terms') {
+      title.textContent = 'Terms & Conditions';
+      content.innerHTML = `
+        <h3>Acceptance of Terms</h3>
+        <p>By accessing and using our website or services, you accept and agree to be bound by the terms and provision of this agreement.</p>
+        
+        <h3>Product Information</h3>
+        <p>We strive to provide accurate product information, but we do not warrant that product descriptions or other content is accurate, complete, reliable, current, or error-free.</p>
+        
+        <h3>Pricing and Payment</h3>
+        <ul>
+          <li>All prices are subject to change without notice</li>
+          <li>Payment terms will be discussed at the time of purchase</li>
+          <li>We reserve the right to refuse or cancel orders</li>
+        </ul>
+        
+        <h3>Warranty</h3>
+        <p>CoolBox provides a 3-season guarantee on all electrical parts. Warranty terms and conditions apply as per our warranty policy.</p>
+        
+        <h3>Limitation of Liability</h3>
+        <p>CoolBox shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of our products or services.</p>
+        
+        <h3>Governing Law</h3>
+        <p>These terms shall be governed by and construed in accordance with the laws of India, and any disputes shall be subject to the jurisdiction of courts in Bhopal, Madhya Pradesh.</p>
+        
+        <h3>Contact Information</h3>
+        <p>For questions regarding these terms, contact us at coolboxbhopal@gmail.com or call 9039835967.</p>
+      `;
+    }
+    
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  }
+  
+  function closeLegalPage() {
+    document.getElementById('legalModal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
+  
+  // Close modal when clicking outside
+  window.onclick = function(event) {
+    const modal = document.getElementById('legalModal');
+    if (event.target === modal) {
+      closeLegalPage();
+    }
+  }
 
   // ── Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(a => {
