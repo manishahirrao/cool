@@ -643,8 +643,33 @@
     #products { background: var(--gray); }
     .products-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
+    }
+    /* Product Tabs */
+    .product-tabs {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    .product-tab-btn {
+      padding: .7rem 2rem;
+      border-radius: 50px;
+      border: 2px solid var(--blue-dark);
+      background: transparent;
+      color: var(--blue-dark);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: .95rem;
+      cursor: pointer;
+      transition: all .25s;
+    }
+    .product-tab-btn.active,
+    .product-tab-btn:hover {
+      background: var(--blue-dark);
+      color: #fff;
     }
     .product-card {
       background: #fff;
@@ -677,10 +702,10 @@
       background: repeating-linear-gradient(45deg, #000 0, #000 1px, transparent 0, transparent 50%);
       background-size: 10px 10px;
     }
-    .product-card:nth-child(1) .product-card-top { background: linear-gradient(135deg, #d6eef8, #a8d4ed); }
-    .product-card:nth-child(2) .product-card-top { background: linear-gradient(135deg, #fdeee4, #f5c8a8); }
-    .product-card:nth-child(3) .product-card-top { background: linear-gradient(135deg, #e8f8ec, #b8e8c4); }
-    .product-card:nth-child(4) .product-card-top { background: linear-gradient(135deg, #f0e8f8, #d0b8ed); }
+    .product-card:nth-child(4n+1) .product-card-top { background: linear-gradient(135deg, #d6eef8, #a8d4ed); }
+    .product-card:nth-child(4n+2) .product-card-top { background: linear-gradient(135deg, #fdeee4, #f5c8a8); }
+    .product-card:nth-child(4n+3) .product-card-top { background: linear-gradient(135deg, #e8f8ec, #b8e8c4); }
+    .product-card:nth-child(4n+4) .product-card-top { background: linear-gradient(135deg, #f0e8f8, #d0b8ed); }
     .product-icon-wrap {
       z-index: 1;
       position: relative;
@@ -1823,69 +1848,177 @@
       <h2 class="section-title">Our Cooler <span style="color:var(--orange)">Models</span></h2>
       <p class="section-sub">Manufactured with premium components directly in Bhopal. Choose the cooler that's right for your space.</p>
     </div>
-    <div class="products-grid">
-      <!-- Card 1 -->
+
+    <!-- Product Tabs -->
+    <div class="product-tabs">
+      <button class="product-tab-btn active" onclick="switchTab('home')" id="tab-home">🏠 Home Coolers</button>
+      <button class="product-tab-btn" onclick="switchTab('industrial')" id="tab-industrial">🏭 Industrial Coolers</button>
+    </div>
+
+    <!-- Home Coolers Tab -->
+    <div class="products-grid tab-panel active" id="panel-home">
+      <!-- H1 -->
       <div class="product-card reveal" style="transition-delay:.05s">
-        <div class="product-card-top">
-          <div class="product-tag">🔥 Best Seller</div>
-          <img src="assests/nagpuri.jpeg" alt="Nagpuri Special Cooler" />
-        </div>
+        <div class="product-card-top"><div class="product-tag">🔥 Best Seller</div><img src="assests/nagpuri.jpeg" alt="Nagpuri Special Cooler" /></div>
         <div class="product-card-body">
           <div class="product-name">Nagpuri Special</div>
           <div class="product-desc">Classic heavy-duty home cooler. 22-gauge steel body built for Indian summers.</div>
           <div class="product-spec">🏗️ 22 Gauge Steel Body</div>
-          <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20to%20know%20about%20the%20Nagpuri%20Special%20cooler%20price." class="btn-product" target="_blank">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Enquire Now
-          </a>
+          <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20to%20know%20about%20the%20Nagpuri%20Special%20cooler%20price." class="btn-product" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire Now</a>
         </div>
       </div>
-      <!-- Card 2 -->
+      <!-- H2 -->
       <div class="product-card reveal" style="transition-delay:.1s">
-        <div class="product-card-top">
-          <div class="product-tag" style="background:#e8611a">💪 Most Powerful</div>
-          <img src="assests/desert-cooler.jpeg" alt="Desert Cooler" />
-        </div>
+        <div class="product-card-top"><div class="product-tag" style="background:#e8611a">💪 Most Powerful</div><img src="assests/desert-cooler.jpeg" alt="Desert Cooler" /></div>
         <div class="product-card-body">
           <div class="product-name">Desert Cooler</div>
           <div class="product-desc">Large capacity tank for big rooms and open halls. Maximum cooling power.</div>
           <div class="product-spec">💧 Extra Large Water Tank</div>
-          <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20to%20know%20about%20the%20Desert%20Cooler%20price." class="btn-product" target="_blank">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Enquire Now
-          </a>
+          <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20to%20know%20about%20the%20Desert%20Cooler%20price." class="btn-product" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire Now</a>
         </div>
       </div>
-      <!-- Card 3 -->
+      <!-- H3 -->
       <div class="product-card reveal" style="transition-delay:.15s">
-        <div class="product-card-top">
-          <div class="product-tag new">✨ Premium</div>
-          <img src="assests/honeycomb-series.jpeg" alt="Honeycomb Series Cooler" />
-        </div>
+        <div class="product-card-top"><div class="product-tag new">✨ Premium</div><img src="assests/honeycomb-series.jpeg" alt="Honeycomb Series Cooler" /></div>
         <div class="product-card-body">
           <div class="product-name">Honeycomb Series</div>
           <div class="product-desc">Advanced honeycomb pad technology for efficient, drip-free cooling all summer.</div>
           <div class="product-spec">🍯 Honeycomb Cooling Pads</div>
-          <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20to%20know%20about%20the%20Honeycomb%20cooler%20price." class="btn-product" target="_blank">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Enquire Now
-          </a>
+          <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20to%20know%20about%20the%20Honeycomb%20cooler%20price." class="btn-product" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire Now</a>
         </div>
       </div>
-      <!-- Card 4 -->
+      <!-- H4 -->
       <div class="product-card reveal" style="transition-delay:.2s">
-        <div class="product-card-top">
-          <div class="product-tag industrial">🏭 Industrial</div>
-          <img src="assests/industrial-centralised.jpeg" alt="Centralized Cooling System" />
+        <div class="product-card-top"><div class="product-tag" style="background:#0ea5e9">🌬️ Slim Series</div><img src="assests/cooler-1 (1).jpeg" alt="Slim Series Cooler" /></div>
+        <div class="product-card-body">
+          <div class="product-name">Slim Series</div>
+          <div class="product-desc">Space-saving design for small rooms and apartments. Powerful airflow in a compact body.</div>
+          <div class="product-spec">📐 Compact Design</div>
+          <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20to%20know%20about%20the%20Slim%20Series%20cooler%20price." class="btn-product" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire Now</a>
         </div>
+      </div>
+      <!-- H5 -->
+      <div class="product-card reveal" style="transition-delay:.25s">
+        <div class="product-card-top"><div class="product-tag" style="background:#16a34a">🌿 Eco Cool</div><img src="assests/cooler-1 (2).jpeg" alt="Eco Cool Cooler" /></div>
+        <div class="product-card-body">
+          <div class="product-name">Eco Cool</div>
+          <div class="product-desc">Energy-efficient cooler with low power consumption. Ideal for daily use.</div>
+          <div class="product-spec">⚡ Low Power Consumption</div>
+          <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20to%20know%20about%20the%20Eco%20Cool%20cooler%20price." class="btn-product" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire Now</a>
+        </div>
+      </div>
+      <!-- H6 -->
+      <div class="product-card reveal" style="transition-delay:.3s">
+        <div class="product-card-top"><div class="product-tag" style="background:#7c3aed">💎 Deluxe</div><img src="assests/cooler-1 (3).jpeg" alt="Deluxe Cooler" /></div>
+        <div class="product-card-body">
+          <div class="product-name">Deluxe Model</div>
+          <div class="product-desc">Premium finish with high-speed fan and large water tank for superior cooling.</div>
+          <div class="product-spec">🌀 High Speed Fan</div>
+          <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20to%20know%20about%20the%20Deluxe%20cooler%20price." class="btn-product" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire Now</a>
+        </div>
+      </div>
+      <!-- H7 -->
+      <div class="product-card reveal" style="transition-delay:.35s">
+        <div class="product-card-top"><div class="product-tag" style="background:#dc2626">❄️ Arctic</div><img src="assests/cooler-1 (4).jpeg" alt="Arctic Cooler" /></div>
+        <div class="product-card-body">
+          <div class="product-name">Arctic Series</div>
+          <div class="product-desc">Maximum cooling output with triple-side cooling pads for extreme heat.</div>
+          <div class="product-spec">🧊 Triple Side Cooling</div>
+          <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20to%20know%20about%20the%20Arctic%20Series%20cooler%20price." class="btn-product" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire Now</a>
+        </div>
+      </div>
+      <!-- H8 -->
+      <div class="product-card reveal" style="transition-delay:.4s">
+        <div class="product-card-top"><div class="product-tag" style="background:#f59e0b">🏆 Classic</div><img src="assests/cooler-1 (5).jpeg" alt="Classic Cooler" /></div>
+        <div class="product-card-body">
+          <div class="product-name">Classic Model</div>
+          <div class="product-desc">Timeless design with reliable performance. A trusted choice for every home.</div>
+          <div class="product-spec">🔩 Durable Build</div>
+          <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20to%20know%20about%20the%20Classic%20cooler%20price." class="btn-product" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire Now</a>
+        </div>
+      </div>
+      <!-- H9 -->
+      <div class="product-card reveal" style="transition-delay:.45s">
+        <div class="product-card-top"><div class="product-tag" style="background:#0891b2">🌊 Wave</div><img src="assests/cooler-1 (6).jpeg" alt="Wave Cooler" /></div>
+        <div class="product-card-body">
+          <div class="product-name">Wave Series</div>
+          <div class="product-desc">Stylish wave-design body with powerful motor and smooth airflow distribution.</div>
+          <div class="product-spec">💨 Smooth Airflow</div>
+          <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20to%20know%20about%20the%20Wave%20Series%20cooler%20price." class="btn-product" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Industrial Coolers Tab -->
+    <div class="products-grid tab-panel" id="panel-industrial" style="display:none">
+      <!-- I1 -->
+      <div class="product-card reveal" style="transition-delay:.05s">
+        <div class="product-card-top"><div class="product-tag industrial">🏭 Industrial</div><img src="assests/industrial-centralised.jpeg" alt="Centralized Cooling System" /></div>
         <div class="product-card-body">
           <div class="product-name">Centralized System</div>
           <div class="product-desc">Industrial-grade cooling with ducting support for shops, offices, and halls.</div>
           <div class="product-spec">🏭 Ducting & Duct Support</div>
-          <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20to%20know%20about%20Centralized%20Cooling%20System%20price." class="btn-product" target="_blank">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Enquire Now
-          </a>
+          <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20to%20know%20about%20Centralized%20Cooling%20System%20price." class="btn-product" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire Now</a>
+        </div>
+      </div>
+      <!-- I2 -->
+      <div class="product-card reveal" style="transition-delay:.1s">
+        <div class="product-card-top"><div class="product-tag industrial">⚙️ Heavy Duty</div><img src="assests/industry-cooler (1).jpeg" alt="Heavy Duty Industrial Cooler" /></div>
+        <div class="product-card-body">
+          <div class="product-name">Heavy Duty Cooler</div>
+          <div class="product-desc">Built for factories and large warehouses. Handles extreme heat with ease.</div>
+          <div class="product-spec">🔩 Heavy Gauge Steel</div>
+          <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20to%20know%20about%20Heavy%20Duty%20Industrial%20Cooler%20price." class="btn-product" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire Now</a>
+        </div>
+      </div>
+      <!-- I3 -->
+      <div class="product-card reveal" style="transition-delay:.15s">
+        <div class="product-card-top"><div class="product-tag industrial">🏗️ Workshop</div><img src="assests/industry-cooler (2).jpeg" alt="Workshop Cooler" /></div>
+        <div class="product-card-body">
+          <div class="product-name">Workshop Cooler</div>
+          <div class="product-desc">Ideal for workshops, garages, and open work areas. Robust and easy to maintain.</div>
+          <div class="product-spec">🔧 Easy Maintenance</div>
+          <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20to%20know%20about%20Workshop%20Cooler%20price." class="btn-product" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire Now</a>
+        </div>
+      </div>
+      <!-- I4 -->
+      <div class="product-card reveal" style="transition-delay:.2s">
+        <div class="product-card-top"><div class="product-tag industrial">🏢 Commercial</div><img src="assests/industry-cooler (3).jpeg" alt="Commercial Cooler" /></div>
+        <div class="product-card-body">
+          <div class="product-name">Commercial Cooler</div>
+          <div class="product-desc">Perfect for showrooms, restaurants, and commercial spaces. High airflow capacity.</div>
+          <div class="product-spec">💨 High Airflow CFM</div>
+          <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20to%20know%20about%20Commercial%20Cooler%20price." class="btn-product" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire Now</a>
+        </div>
+      </div>
+      <!-- I5 -->
+      <div class="product-card reveal" style="transition-delay:.25s">
+        <div class="product-card-top"><div class="product-tag industrial">🌡️ Mega Cool</div><img src="assests/industry-cooler (4).jpeg" alt="Mega Cool Industrial" /></div>
+        <div class="product-card-body">
+          <div class="product-name">Mega Cool</div>
+          <div class="product-desc">Extra-large capacity industrial cooler for open yards and large production floors.</div>
+          <div class="product-spec">📦 Extra Large Capacity</div>
+          <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20to%20know%20about%20Mega%20Cool%20Industrial%20Cooler%20price." class="btn-product" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire Now</a>
+        </div>
+      </div>
+      <!-- I6 -->
+      <div class="product-card reveal" style="transition-delay:.3s">
+        <div class="product-card-top"><div class="product-tag industrial">🔄 Duct Type</div><img src="assests/industry-cooler (5).jpeg" alt="Duct Type Cooler" /></div>
+        <div class="product-card-body">
+          <div class="product-name">Duct Type Cooler</div>
+          <div class="product-desc">Connects to duct systems for multi-room industrial cooling. Centralized control.</div>
+          <div class="product-spec">🏭 Multi-Room Ducting</div>
+          <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20to%20know%20about%20Duct%20Type%20Cooler%20price." class="btn-product" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire Now</a>
+        </div>
+      </div>
+      <!-- I7 -->
+      <div class="product-card reveal" style="transition-delay:.35s">
+        <div class="product-card-top"><div class="product-tag industrial">⚡ Turbo</div><img src="assests/industry-cooler (6).jpeg" alt="Turbo Industrial Cooler" /></div>
+        <div class="product-card-body">
+          <div class="product-name">Turbo Industrial</div>
+          <div class="product-desc">High-speed turbo fan with industrial motor for maximum cooling in extreme conditions.</div>
+          <div class="product-spec">🌀 Turbo Fan Motor</div>
+          <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20to%20know%20about%20Turbo%20Industrial%20Cooler%20price." class="btn-product" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire Now</a>
         </div>
       </div>
     </div>
@@ -2251,6 +2384,14 @@
   }
   function closeMenu() {
     document.getElementById('mobileMenu').classList.remove('open');
+  }
+
+  // ── Product Tabs
+  function switchTab(tab) {
+    document.getElementById('panel-home').style.display = tab === 'home' ? 'grid' : 'none';
+    document.getElementById('panel-industrial').style.display = tab === 'industrial' ? 'grid' : 'none';
+    document.getElementById('tab-home').classList.toggle('active', tab === 'home');
+    document.getElementById('tab-industrial').classList.toggle('active', tab === 'industrial');
   }
   // close on outside click
   document.addEventListener('click', (e) => {
