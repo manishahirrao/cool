@@ -211,6 +211,24 @@
       border-bottom: 1px solid var(--blue-light);
     }
 
+    /* ─── TOP BANNER ─────────────────────────────────────── */
+    .top-banner {
+      position: relative;
+      width: 100%;
+      z-index: 10;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,.1);
+      margin-top: 68px;
+    }
+    .top-banner img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      max-height: 120px;
+    }
+
     /* ─── HERO ───────────────────────────────────────────── */
     #hero {
       min-height: 100vh;
@@ -639,8 +657,322 @@
       margin-top: .3rem;
     }
 
+    /* ─── PROMO BANNER ────────────────────────────────────── */
+    .promo-banner {
+      background: linear-gradient(135deg, #f4f8fb 0%, #e8f4fd 100%);
+      padding: 60px 5%;
+      overflow: hidden;
+    }
+    .promo-banner-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .promo-banner-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .promo-banner-image {
+      position: relative;
+    }
+    .promo-banner-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(13,79,110,.2);
+    }
+    .promo-banner-tag {
+      display: inline-block;
+      background: var(--orange-lt);
+      color: var(--orange);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: .75rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: .35rem .9rem;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+    }
+    .promo-banner-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 800;
+      color: var(--blue-dark);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .promo-banner-text {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+    .promo-banner-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .promo-btn-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: var(--green-wa);
+      color: #fff;
+      padding: .9rem 2rem;
+      border-radius: 50px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 6px 20px rgba(37,211,102,.3);
+      text-decoration: none;
+    }
+    .promo-btn-wa:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(37,211,102,.4);
+    }
+    .promo-btn-call {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: transparent;
+      border: 2px solid var(--blue-dark);
+      color: var(--blue-dark);
+      padding: .9rem 2rem;
+      border-radius: 50px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: all .2s;
+      text-decoration: none;
+    }
+    .promo-btn-call:hover {
+      background: var(--blue-dark);
+      color: #fff;
+      transform: translateY(-3px);
+    }
+    .promo-banner-features {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    .promo-feature-item {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      color: var(--text-muted);
+      font-size: .9rem;
+    }
+
     /* ─── PRODUCTS ─────────────────────────────────────────── */
     #products { background: var(--gray); }
+    
+    /* Vertical Categories List */
+    .categories-vertical-list {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+    
+    /* Category Section */
+    .category-section {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      transition: transform .3s, box-shadow .3s;
+    }
+    
+    .category-section:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    /* Category Header */
+    .category-header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    
+    .category-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--blue-dark);
+      margin-bottom: .5rem;
+    }
+    
+    .category-subtitle {
+      font-size: 1rem;
+      color: var(--text-muted);
+    }
+    
+    /* Horizontal Scrolling Images */
+    .category-images-scroll {
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+    
+    .images-track {
+      display: flex;
+      gap: 1.5rem;
+      animation: scroll-images 20s linear infinite;
+    }
+    
+    .images-track:hover {
+      animation-play-state: paused;
+    }
+    
+    .images-track img {
+      flex: 0 0 300px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      transition: transform .3s;
+    }
+    
+    .images-track img:hover {
+      transform: scale(1.05);
+    }
+    
+    @keyframes scroll-images {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    
+    /* Enquire Button */
+    .btn-category-enquire {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto;
+      padding: .8rem 1.5rem;
+      background: var(--blue-dark);
+      color: #fff;
+      border-radius: 50px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      transition: all .3s;
+      box-shadow: 0 4px 12px rgba(26, 122, 191, .3);
+    }
+    
+    .btn-category-enquire:hover {
+      background: var(--orange);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(232, 97, 26, .4);
+    }
+    
+    /* Category Carousel Container */
+    .category-carousel-container {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .category-carousel {
+      display: flex;
+      gap: 2rem;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding: 1rem 0;
+      scrollbar-width: thin;
+      scrollbar-color: var(--blue) var(--gray);
+    }
+    
+    .category-carousel::-webkit-scrollbar {
+      height: 8px;
+    }
+    
+    .category-carousel::-webkit-scrollbar-track {
+      background: var(--gray);
+      border-radius: 10px;
+    }
+    
+    .category-carousel::-webkit-scrollbar-thumb {
+      background: var(--blue);
+      border-radius: 10px;
+    }
+    
+    /* Category Slide */
+    .category-slide {
+      flex: 0 0 350px;
+      min-width: 350px;
+    }
+    
+    /* Category Card */
+    .category-card {
+      background: #fff;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      position: relative;
+      transition: transform .3s, box-shadow .3s;
+      height: 100%;
+    }
+    
+    .category-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    /* Image Slider Container */
+    .category-image-slider {
+      height: 250px;
+      position: relative;
+      overflow: hidden;
+      background: #f5f5f5;
+    }
+    .category-image-slider .slider-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .category-image-slider .slider-image.active {
+      opacity: 1;
+      z-index: 1;
+    }
+    
+    /* Category Card Body */
+    .category-card-body {
+      padding: 1.5rem;
+    }
+    .category-name {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--blue-dark);
+      margin-bottom: .6rem;
+    }
+    .category-desc {
+      font-size: .88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+      min-height: 70px;
+    }
+    
+    /* Blue top accent */
+    .category-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--blue), var(--orange));
+    }
+    
     .products-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -785,7 +1117,10 @@
 
     /* ─── WHY CHOOSE ──────────────────────────────────────── */
     #why {
-      background: var(--blue-dark);
+      background: linear-gradient(135deg, rgba(13, 79, 110, 0.85) 0%, rgba(26, 122, 191, 0.8) 100%), url('assests/why-coolbox.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
       position: relative;
       overflow: hidden;
       clip-path: polygon(0 40px, 100% 0, 100% calc(100% - 40px), 0 100%);
@@ -800,9 +1135,20 @@
       border-radius: 50%;
       pointer-events: none;
     }
-    #why .section-title { color: #fff; }
-    #why .section-tag { background: rgba(255,255,255,.1); color: #ffb347; }
-    #why .section-sub { color: rgba(255,255,255,.65); }
+    #why .section-title { 
+      color: #fff; 
+      text-shadow: 0 2px 8px rgba(0,0,0,.4), 0 4px 16px rgba(0,0,0,.3);
+    }
+    #why .section-tag { 
+      background: rgba(255,255,255,.2); 
+      color: #ffb347; 
+      text-shadow: 0 1px 3px rgba(0,0,0,.3);
+      border: 1px solid rgba(255,255,255,.3);
+    }
+    #why .section-sub { 
+      color: rgba(255,255,255,.95); 
+      text-shadow: 0 2px 6px rgba(0,0,0,.4);
+    }
     .features-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -829,11 +1175,13 @@
       font-weight: 700;
       font-size: .92rem;
       margin-bottom: .2rem;
+      text-shadow: 0 1px 4px rgba(0,0,0,.4);
     }
     .feature-text span {
-      color: rgba(255,255,255,.55);
+      color: rgba(255,255,255,.9);
       font-size: .82rem;
       line-height: 1.5;
+      text-shadow: 0 1px 3px rgba(0,0,0,.3);
     }
     .brands-bar {
       border-top: 1px solid rgba(255,255,255,.1);
@@ -1515,6 +1863,7 @@
       .about-grid { grid-template-columns: 1fr; gap: 2rem; }
       .gallery-grid { grid-template-columns: repeat(3, 1fr); }
       .gallery-item:nth-child(even) { transform: translateY(15px); }
+      .top-banner img { max-height: 100px; }
     }
     @media (max-width: 768px) {
       .nav-links, .nav-cta { display: none; }
@@ -1524,6 +1873,15 @@
       .about-grid { grid-template-columns: 1fr; }
       .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
       .products-grid { grid-template-columns: 1fr; gap: 1rem; }
+      .promo-banner-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .promo-banner-image { order: -1; }
+      .promo-banner { padding: 40px 5%; }
+      .categories-vertical-list { gap: 2rem; }
+      .category-section { padding: 1.5rem; }
+      .category-title { font-size: 1.5rem; }
+      .category-subtitle { font-size: .9rem; }
+      .images-track img { flex: 0 0 250px; height: 200px; }
+      .btn-category-enquire { max-width: 100%; padding: .7rem 1.2rem; font-size: .9rem; }
       .features-grid { grid-template-columns: 1fr; }
       .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: .8rem; }
       .gallery-item:nth-child(even) { transform: translateY(10px); }
@@ -1540,6 +1898,7 @@
       .floating-buttons { bottom: 20px; right: 20px; }
       .wa-fab, .call-fab { width: 50px; height: 50px; }
       .wa-fab svg, .call-fab svg { width: 24px; height: 24px; }
+      .top-banner img { max-height: 80px; }
     }
     @media (max-width: 480px) {
       section { padding: 60px 4%; }
@@ -1548,6 +1907,13 @@
       .hero-title-hindi { font-size: clamp(2.5rem, 8vw, 4rem); }
       .hero-subtitle { font-size: clamp(1rem, 3vw, 1.2rem); }
       .products-grid { grid-template-columns: 1fr; }
+      .promo-banner { padding: 30px 4%; }
+      .promo-banner-ctas { flex-direction: column; }
+      .promo-btn-wa, .promo-btn-call { width: 100%; justify-content: center; }
+      .categories-vertical-list { gap: 1.5rem; }
+      .category-section { padding: 1.2rem; }
+      .category-title { font-size: 1.3rem; }
+      .images-track img { flex: 0 0 200px; height: 180px; gap: 1rem; }
       .steps-row { grid-template-columns: 1fr; }
       .stats-inner { grid-template-columns: 1fr; gap: 1rem; }
       .hero-ctas { flex-direction: column; gap: .8rem; }
@@ -1560,6 +1926,7 @@
       .footer-bottom { gap: .8rem; }
       .footer-legal { flex-direction: column; gap: .5rem; }
       .nav-logo img { max-height: 35px; }
+      .top-banner img { max-height: 60px; }
     }
   </style>
   
@@ -1728,6 +2095,12 @@
     </div>
   </div>
 </nav>
+
+<!-- Top Banner Image -->
+<div class="top-banner">
+  <img src="assests/top-of hero at navbar.jpeg" alt="CoolBox Air Coolers Banner" />
+</div>
+
 <div class="mobile-menu" id="mobileMenu">
   <a href="#hero" onclick="closeMenu()">🏠 Home</a>
   <a href="#products" onclick="closeMenu()">❄️ Products</a>
@@ -1740,6 +2113,7 @@
 
 <!-- ═══ HERO ══════════════════════════════════════════════ -->
 <section id="hero" role="banner" aria-label="Hero section">
+  
   <div class="hero-inner">
     <div class="hero-content">
       <div class="hero-badge">⭐ Since 1998 &nbsp;·&nbsp; Bhopal's #1 Air Cooler Brand</div>
@@ -1763,9 +2137,7 @@
       </div>
     </div>
     <div class="hero-visual">
-      <div style="max-width: 380px; max-height: 400px; width: 100%; display: flex; align-items: center; justify-content: center; overflow: hidden; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,.3); background: rgba(255,255,255,0.05);">
-        <img src="assests/hero-side.jpeg" alt="CoolBox Air Cooler" style="width: 100%; height: 100%; object-fit: cover;" />
-      </div>
+      <img src="assests/hero-side-1.PNG" alt="CoolBox Air Cooler" style="max-width: 450px; width: 100%; height: auto; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,.4);" />
     </div>
   </div>
   <div class="wave-divider">
@@ -1809,10 +2181,7 @@
         </div>
       </div>
       <div class="about-video reveal-right">
-        <video autoplay muted loop playsinline poster="assests/hero.jpeg">
-          <source src="assests/video.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+        <img src="assests/hero-side.jpeg" alt="CoolBox Air Cooler" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius);" />
       </div>
     </div>
   </div>
@@ -1840,191 +2209,208 @@
   </div>
 </section>
 
-<!-- ═══ PRODUCTS ══════════════════════════════════════════ -->
-<section id="products" aria-label="Our products">
-  <div class="section-inner">
-    <div class="reveal">
-      <div class="section-tag">Our Products</div>
-      <h2 class="section-title">Our Cooler <span style="color:var(--orange)">Models</span></h2>
-      <p class="section-sub">Manufactured with premium components directly in Bhopal. Choose the cooler that's right for your space.</p>
-    </div>
-
-    <!-- Product Tabs -->
-    <div class="product-tabs">
-      <button class="product-tab-btn active" onclick="switchTab('home')" id="tab-home">🏠 Home Coolers</button>
-      <button class="product-tab-btn" onclick="switchTab('industrial')" id="tab-industrial">🏭 Industrial Coolers</button>
-    </div>
-
-    <!-- Home Coolers Tab -->
-    <div class="products-grid tab-panel active" id="panel-home">
-      <!-- H1 -->
-      <div class="product-card reveal" style="transition-delay:.05s">
-        <div class="product-card-top"><div class="product-tag">🔥 Best Seller</div><img src="assests/nagpuri.jpeg" alt="Nagpuri Special Cooler" /></div>
-        <div class="product-card-body">
-          <div class="product-name">Nagpuri Special</div>
-          <div class="product-desc">Classic heavy-duty home cooler. 22-gauge steel body built for Indian summers.</div>
-          <div class="product-spec">🏗️ 22 Gauge Steel Body</div>
-          <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20to%20know%20about%20the%20Nagpuri%20Special%20cooler%20price." class="btn-product" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire Now</a>
-        </div>
+<!-- ═══ PROMO BANNER ══════════════════════════════════════ -->
+<section class="promo-banner">
+  <div class="promo-banner-inner">
+    <div class="promo-banner-grid reveal">
+      <div class="promo-banner-image">
+        <img src="assests/hero-sside.JPG" alt="CoolBox Premium Coolers" />
       </div>
-      <!-- H2 -->
-      <div class="product-card reveal" style="transition-delay:.1s">
-        <div class="product-card-top"><div class="product-tag" style="background:#e8611a">💪 Most Powerful</div><img src="assests/desert-cooler.jpeg" alt="Desert Cooler" /></div>
-        <div class="product-card-body">
-          <div class="product-name">Desert Cooler</div>
-          <div class="product-desc">Large capacity tank for big rooms and open halls. Maximum cooling power.</div>
-          <div class="product-spec">💧 Extra Large Water Tank</div>
-          <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20to%20know%20about%20the%20Desert%20Cooler%20price." class="btn-product" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire Now</a>
+      <div class="promo-banner-content">
+        <div class="promo-banner-tag">Premium Quality</div>
+        <h2 class="promo-banner-title">
+          Experience the <span style="color: var(--orange);">CoolBox</span> Difference
+        </h2>
+        <p class="promo-banner-text">
+          Built with premium branded components, our coolers deliver maximum cooling efficiency. From Havells exhaust fans to Tesla pumps, every part is chosen for quality and durability.
+        </p>
+        <div class="promo-banner-ctas">
+          <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20a%20quote%20for%20CoolBox%20Air%20Coolers." target="_blank" class="promo-btn-wa">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Get a Quote
+          </a>
+          <a href="tel:8871882661" class="promo-btn-call">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.27a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .5h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.34a16 16 0 006.29 6.29l1.21-1.21a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            Call Now
+          </a>
         </div>
-      </div>
-      <!-- H3 -->
-      <div class="product-card reveal" style="transition-delay:.15s">
-        <div class="product-card-top"><div class="product-tag new">✨ Premium</div><img src="assests/honeycomb-series.jpeg" alt="Honeycomb Series Cooler" /></div>
-        <div class="product-card-body">
-          <div class="product-name">Honeycomb Series</div>
-          <div class="product-desc">Advanced honeycomb pad technology for efficient, drip-free cooling all summer.</div>
-          <div class="product-spec">🍯 Honeycomb Cooling Pads</div>
-          <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20to%20know%20about%20the%20Honeycomb%20cooler%20price." class="btn-product" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire Now</a>
-        </div>
-      </div>
-      <!-- H4 -->
-      <div class="product-card reveal" style="transition-delay:.2s">
-        <div class="product-card-top"><div class="product-tag" style="background:#0ea5e9">🌬️ Slim Series</div><img src="assests/cooler-1 (1).jpeg" alt="Slim Series Cooler" /></div>
-        <div class="product-card-body">
-          <div class="product-name">Slim Series</div>
-          <div class="product-desc">Space-saving design for small rooms and apartments. Powerful airflow in a compact body.</div>
-          <div class="product-spec">📐 Compact Design</div>
-          <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20to%20know%20about%20the%20Slim%20Series%20cooler%20price." class="btn-product" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire Now</a>
-        </div>
-      </div>
-      <!-- H5 -->
-      <div class="product-card reveal" style="transition-delay:.25s">
-        <div class="product-card-top"><div class="product-tag" style="background:#16a34a">🌿 Eco Cool</div><img src="assests/cooler-1 (2).jpeg" alt="Eco Cool Cooler" /></div>
-        <div class="product-card-body">
-          <div class="product-name">Eco Cool</div>
-          <div class="product-desc">Energy-efficient cooler with low power consumption. Ideal for daily use.</div>
-          <div class="product-spec">⚡ Low Power Consumption</div>
-          <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20to%20know%20about%20the%20Eco%20Cool%20cooler%20price." class="btn-product" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire Now</a>
-        </div>
-      </div>
-      <!-- H6 -->
-      <div class="product-card reveal" style="transition-delay:.3s">
-        <div class="product-card-top"><div class="product-tag" style="background:#7c3aed">💎 Deluxe</div><img src="assests/cooler-1 (3).jpeg" alt="Deluxe Cooler" /></div>
-        <div class="product-card-body">
-          <div class="product-name">Deluxe Model</div>
-          <div class="product-desc">Premium finish with high-speed fan and large water tank for superior cooling.</div>
-          <div class="product-spec">🌀 High Speed Fan</div>
-          <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20to%20know%20about%20the%20Deluxe%20cooler%20price." class="btn-product" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire Now</a>
-        </div>
-      </div>
-      <!-- H7 -->
-      <div class="product-card reveal" style="transition-delay:.35s">
-        <div class="product-card-top"><div class="product-tag" style="background:#dc2626">❄️ Arctic</div><img src="assests/cooler-1 (4).jpeg" alt="Arctic Cooler" /></div>
-        <div class="product-card-body">
-          <div class="product-name">Arctic Series</div>
-          <div class="product-desc">Maximum cooling output with triple-side cooling pads for extreme heat.</div>
-          <div class="product-spec">🧊 Triple Side Cooling</div>
-          <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20to%20know%20about%20the%20Arctic%20Series%20cooler%20price." class="btn-product" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire Now</a>
-        </div>
-      </div>
-      <!-- H8 -->
-      <div class="product-card reveal" style="transition-delay:.4s">
-        <div class="product-card-top"><div class="product-tag" style="background:#f59e0b">🏆 Classic</div><img src="assests/cooler-1 (5).jpeg" alt="Classic Cooler" /></div>
-        <div class="product-card-body">
-          <div class="product-name">Classic Model</div>
-          <div class="product-desc">Timeless design with reliable performance. A trusted choice for every home.</div>
-          <div class="product-spec">🔩 Durable Build</div>
-          <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20to%20know%20about%20the%20Classic%20cooler%20price." class="btn-product" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire Now</a>
-        </div>
-      </div>
-      <!-- H9 -->
-      <div class="product-card reveal" style="transition-delay:.45s">
-        <div class="product-card-top"><div class="product-tag" style="background:#0891b2">🌊 Wave</div><img src="assests/cooler-1 (6).jpeg" alt="Wave Cooler" /></div>
-        <div class="product-card-body">
-          <div class="product-name">Wave Series</div>
-          <div class="product-desc">Stylish wave-design body with powerful motor and smooth airflow distribution.</div>
-          <div class="product-spec">💨 Smooth Airflow</div>
-          <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20to%20know%20about%20the%20Wave%20Series%20cooler%20price." class="btn-product" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire Now</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Industrial Coolers Tab -->
-    <div class="products-grid tab-panel" id="panel-industrial" style="display:none">
-      <!-- I1 -->
-      <div class="product-card reveal" style="transition-delay:.05s">
-        <div class="product-card-top"><div class="product-tag industrial">🏭 Industrial</div><img src="assests/industrial-centralised.jpeg" alt="Centralized Cooling System" /></div>
-        <div class="product-card-body">
-          <div class="product-name">Centralized System</div>
-          <div class="product-desc">Industrial-grade cooling with ducting support for shops, offices, and halls.</div>
-          <div class="product-spec">🏭 Ducting & Duct Support</div>
-          <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20to%20know%20about%20Centralized%20Cooling%20System%20price." class="btn-product" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire Now</a>
-        </div>
-      </div>
-      <!-- I2 -->
-      <div class="product-card reveal" style="transition-delay:.1s">
-        <div class="product-card-top"><div class="product-tag industrial">⚙️ Heavy Duty</div><img src="assests/industry-cooler (1).jpeg" alt="Heavy Duty Industrial Cooler" /></div>
-        <div class="product-card-body">
-          <div class="product-name">Heavy Duty Cooler</div>
-          <div class="product-desc">Built for factories and large warehouses. Handles extreme heat with ease.</div>
-          <div class="product-spec">🔩 Heavy Gauge Steel</div>
-          <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20to%20know%20about%20Heavy%20Duty%20Industrial%20Cooler%20price." class="btn-product" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire Now</a>
-        </div>
-      </div>
-      <!-- I3 -->
-      <div class="product-card reveal" style="transition-delay:.15s">
-        <div class="product-card-top"><div class="product-tag industrial">🏗️ Workshop</div><img src="assests/industry-cooler (2).jpeg" alt="Workshop Cooler" /></div>
-        <div class="product-card-body">
-          <div class="product-name">Workshop Cooler</div>
-          <div class="product-desc">Ideal for workshops, garages, and open work areas. Robust and easy to maintain.</div>
-          <div class="product-spec">🔧 Easy Maintenance</div>
-          <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20to%20know%20about%20Workshop%20Cooler%20price." class="btn-product" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire Now</a>
-        </div>
-      </div>
-      <!-- I4 -->
-      <div class="product-card reveal" style="transition-delay:.2s">
-        <div class="product-card-top"><div class="product-tag industrial">🏢 Commercial</div><img src="assests/industry-cooler (3).jpeg" alt="Commercial Cooler" /></div>
-        <div class="product-card-body">
-          <div class="product-name">Commercial Cooler</div>
-          <div class="product-desc">Perfect for showrooms, restaurants, and commercial spaces. High airflow capacity.</div>
-          <div class="product-spec">💨 High Airflow CFM</div>
-          <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20to%20know%20about%20Commercial%20Cooler%20price." class="btn-product" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire Now</a>
-        </div>
-      </div>
-      <!-- I5 -->
-      <div class="product-card reveal" style="transition-delay:.25s">
-        <div class="product-card-top"><div class="product-tag industrial">🌡️ Mega Cool</div><img src="assests/industry-cooler (4).jpeg" alt="Mega Cool Industrial" /></div>
-        <div class="product-card-body">
-          <div class="product-name">Mega Cool</div>
-          <div class="product-desc">Extra-large capacity industrial cooler for open yards and large production floors.</div>
-          <div class="product-spec">📦 Extra Large Capacity</div>
-          <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20to%20know%20about%20Mega%20Cool%20Industrial%20Cooler%20price." class="btn-product" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire Now</a>
-        </div>
-      </div>
-      <!-- I6 -->
-      <div class="product-card reveal" style="transition-delay:.3s">
-        <div class="product-card-top"><div class="product-tag industrial">🔄 Duct Type</div><img src="assests/industry-cooler (5).jpeg" alt="Duct Type Cooler" /></div>
-        <div class="product-card-body">
-          <div class="product-name">Duct Type Cooler</div>
-          <div class="product-desc">Connects to duct systems for multi-room industrial cooling. Centralized control.</div>
-          <div class="product-spec">🏭 Multi-Room Ducting</div>
-          <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20to%20know%20about%20Duct%20Type%20Cooler%20price." class="btn-product" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire Now</a>
-        </div>
-      </div>
-      <!-- I7 -->
-      <div class="product-card reveal" style="transition-delay:.35s">
-        <div class="product-card-top"><div class="product-tag industrial">⚡ Turbo</div><img src="assests/industry-cooler (6).jpeg" alt="Turbo Industrial Cooler" /></div>
-        <div class="product-card-body">
-          <div class="product-name">Turbo Industrial</div>
-          <div class="product-desc">High-speed turbo fan with industrial motor for maximum cooling in extreme conditions.</div>
-          <div class="product-spec">🌀 Turbo Fan Motor</div>
-          <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20to%20know%20about%20Turbo%20Industrial%20Cooler%20price." class="btn-product" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enquire Now</a>
+        <div class="promo-banner-features">
+          <div class="promo-feature-item">
+            <span style="color: var(--orange); font-size: 1.2rem;">✓</span> 25+ Years Experience
+          </div>
+          <div class="promo-feature-item">
+            <span style="color: var(--orange); font-size: 1.2rem;">✓</span> 3 Season Guarantee
+          </div>
+          <div class="promo-feature-item">
+            <span style="color: var(--orange); font-size: 1.2rem;">✓</span> Direct from Factory
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ═══ PRODUCTS ══════════════════════════════════════════ -->
+<section id="products" aria-label="Our products">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-tag">Our Products</div>
+      <h2 class="section-title">Cooling Solutions <span style="color:var(--orange)">For Every Need</span></h2>
+      <p class="section-sub">From residential to industrial, we provide complete cooling solutions with premium quality components.</p>
+    </div>
+
+    <!-- 6 Categories - Each with horizontal auto-scrolling images -->
+    <div class="categories-vertical-list">
+      
+      <!-- Category 1: Residency -->
+      <div class="category-section reveal" style="transition-delay:.05s">
+        <div class="category-header">
+          <h3 class="category-title">🏠 Residency</h3>
+          <p class="category-subtitle">Premium home coolers for residential spaces</p>
+        </div>
+        <div class="category-images-scroll">
+          <div class="images-track" data-category="residency">
+            <img src="assests/nagpuri.jpeg" alt="Residency Cooler" />
+            <img src="assests/desert-cooler.jpeg" alt="Residency Cooler" />
+            <img src="assests/honeycomb-series.jpeg" alt="Residency Cooler" />
+            <img src="assests/cooler-1 (1).jpeg" alt="Residency Cooler" />
+            <!-- Duplicate for seamless loop -->
+            <img src="assests/nagpuri.jpeg" alt="Residency Cooler" />
+            <img src="assests/desert-cooler.jpeg" alt="Residency Cooler" />
+            <img src="assests/honeycomb-series.jpeg" alt="Residency Cooler" />
+            <img src="assests/cooler-1 (1).jpeg" alt="Residency Cooler" />
+          </div>
+        </div>
+        <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20to%20know%20about%20Residency%20Coolers." class="btn-category-enquire" target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Enquire Now
+        </a>
+      </div>
+
+      <!-- Category 2: Commercial -->
+      <div class="category-section reveal" style="transition-delay:.1s">
+        <div class="category-header">
+          <h3 class="category-title">🏢 Commercial</h3>
+          <p class="category-subtitle">High-capacity coolers for offices and commercial spaces</p>
+        </div>
+        <div class="category-images-scroll">
+          <div class="images-track" data-category="commercial">
+            <img src="assests/industry-cooler (1).jpeg" alt="Commercial Cooler" />
+            <img src="assests/industry-cooler (2).jpeg" alt="Commercial Cooler" />
+            <img src="assests/industry-cooler (3).jpeg" alt="Commercial Cooler" />
+            <img src="assests/industry-cooler (4).jpeg" alt="Commercial Cooler" />
+            <img src="assests/industry-cooler (1).jpeg" alt="Commercial Cooler" />
+            <img src="assests/industry-cooler (2).jpeg" alt="Commercial Cooler" />
+            <img src="assests/industry-cooler (3).jpeg" alt="Commercial Cooler" />
+            <img src="assests/industry-cooler (4).jpeg" alt="Commercial Cooler" />
+          </div>
+        </div>
+        <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20to%20know%20about%20Commercial%20Coolers." class="btn-category-enquire" target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Enquire Now
+        </a>
+      </div>
+
+      <!-- Category 3: Ductable -->
+      <div class="category-section reveal" style="transition-delay:.15s">
+        <div class="category-header">
+          <h3 class="category-title">🏭 Ductable</h3>
+          <p class="category-subtitle">Centralized ductable cooling systems</p>
+        </div>
+        <div class="category-images-scroll">
+          <div class="images-track" data-category="ductable">
+            <img src="assests/industrial-centralised.jpeg" alt="Ductable Cooler" />
+            <img src="assests/industry-cooler (5).jpeg" alt="Ductable Cooler" />
+            <img src="assests/industry-cooler (6).jpeg" alt="Ductable Cooler" />
+            <img src="assests/cooler-1 (2).jpeg" alt="Ductable Cooler" />
+            <img src="assests/industrial-centralised.jpeg" alt="Ductable Cooler" />
+            <img src="assests/industry-cooler (5).jpeg" alt="Ductable Cooler" />
+            <img src="assests/industry-cooler (6).jpeg" alt="Ductable Cooler" />
+            <img src="assests/cooler-1 (2).jpeg" alt="Ductable Cooler" />
+          </div>
+        </div>
+        <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20to%20know%20about%20Ductable%20Coolers." class="btn-category-enquire" target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Enquire Now
+        </a>
+      </div>
+
+      <!-- Category 4: Ventilator -->
+      <div class="category-section reveal" style="transition-delay:.2s">
+        <div class="category-header">
+          <h3 class="category-title">🌀 Ventilator</h3>
+          <p class="category-subtitle">High-performance ventilation fans</p>
+        </div>
+        <div class="category-images-scroll">
+          <div class="images-track" data-category="ventilator">
+            <img src="assests/cooler-1 (3).jpeg" alt="Ventilator" />
+            <img src="assests/cooler-1 (4).jpeg" alt="Ventilator" />
+            <img src="assests/cooler-1 (5).jpeg" alt="Ventilator" />
+            <img src="assests/cooler-1 (6).jpeg" alt="Ventilator" />
+            <img src="assests/cooler-1 (3).jpeg" alt="Ventilator" />
+            <img src="assests/cooler-1 (4).jpeg" alt="Ventilator" />
+            <img src="assests/cooler-1 (5).jpeg" alt="Ventilator" />
+            <img src="assests/cooler-1 (6).jpeg" alt="Ventilator" />
+          </div>
+        </div>
+        <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20to%20know%20about%20Ventilators." class="btn-category-enquire" target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Enquire Now
+        </a>
+      </div>
+
+      <!-- Category 5: Kitchen -->
+      <div class="category-section reveal" style="transition-delay:.25s">
+        <div class="category-header">
+          <h3 class="category-title">🍳 Kitchen</h3>
+          <p class="category-subtitle">Specialized cooling for kitchens and restaurants</p>
+        </div>
+        <div class="category-images-scroll">
+          <div class="images-track" data-category="kitchen">
+            <img src="assests/cooler (1).jpeg" alt="Kitchen Cooler" />
+            <img src="assests/cooler (3).jpeg" alt="Kitchen Cooler" />
+            <img src="assests/indutrial-cooler (1).jpeg" alt="Kitchen Cooler" />
+            <img src="assests/indutrial-cooler (2).jpeg" alt="Kitchen Cooler" />
+            <img src="assests/cooler (1).jpeg" alt="Kitchen Cooler" />
+            <img src="assests/cooler (3).jpeg" alt="Kitchen Cooler" />
+            <img src="assests/indutrial-cooler (1).jpeg" alt="Kitchen Cooler" />
+            <img src="assests/indutrial-cooler (2).jpeg" alt="Kitchen Cooler" />
+          </div>
+        </div>
+        <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20to%20know%20about%20Kitchen%20Coolers." class="btn-category-enquire" target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Enquire Now
+        </a>
+      </div>
+
+      <!-- Category 6: Ducting Service -->
+      <div class="category-section reveal" style="transition-delay:.3s">
+        <div class="category-header">
+          <h3 class="category-title">🔧 Ducting Service</h3>
+          <p class="category-subtitle">Professional ducting installation and maintenance</p>
+        </div>
+        <div class="category-images-scroll">
+          <div class="images-track" data-category="ducting">
+            <img src="assests/ducting-service.jpg" alt="Ducting Service" />
+            <img src="assests/industrial-centralised.jpeg" alt="Ducting Service" />
+            <img src="assests/indutrial-cooler (4).jpeg" alt="Ducting Service" />
+            <img src="assests/indutrial-cooler (5).jpeg" alt="Ducting Service" />
+            <img src="assests/ducting-service.jpg" alt="Ducting Service" />
+            <img src="assests/industrial-centralised.jpeg" alt="Ducting Service" />
+            <img src="assests/indutrial-cooler (4).jpeg" alt="Ducting Service" />
+            <img src="assests/indutrial-cooler (5).jpeg" alt="Ducting Service" />
+          </div>
+        </div>
+        <a href="https://wa.me/918871882661?text=Hello%2C%20I%20want%20to%20know%20about%20Ducting%20Services." class="btn-category-enquire" target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Enquire Now
+        </a>
+      </div>
+
+    </div>
+    </div>
+  </div>
+</section>
 <!-- ═══ WHY CHOOSE ════════════════════════════════════════ -->
 <section id="why" aria-label="Why choose CoolBox">
   <div class="section-inner">
@@ -2068,14 +2454,48 @@
         <div class="gallery-item">
           <img src="assests/indutrial-cooler (2).jpeg" alt="CoolBox Cooler Installation" />
         </div>
-       
+        <div class="gallery-item">
+          <img src="assests/indutrial-cooler (3).jpeg" alt="CoolBox Manufacturing" />
+        </div>
         <div class="gallery-item">
           <img src="assests/indutrial-cooler (4).jpeg" alt="CoolBox Quality Check" />
         </div>
         <div class="gallery-item">
           <img src="assests/indutrial-cooler (5).jpeg" alt="CoolBox Factory" />
         </div>
-      
+        <div class="gallery-item">
+          <img src="assests/industry-cooler (1).jpeg" alt="CoolBox Commercial Cooler" />
+        </div>
+        <div class="gallery-item">
+          <img src="assests/industry-cooler (2).jpeg" alt="CoolBox Industrial Unit" />
+        </div>
+        <div class="gallery-item">
+          <img src="assests/industry-cooler (3).jpeg" alt="CoolBox Heavy Duty" />
+        </div>
+        <div class="gallery-item">
+          <img src="assests/industry-cooler (4).jpeg" alt="CoolBox Large Capacity" />
+        </div>
+        <div class="gallery-item">
+          <img src="assests/industry-cooler (5).jpeg" alt="CoolBox Professional" />
+        </div>
+        <div class="gallery-item">
+          <img src="assests/industry-cooler (6).jpeg" alt="CoolBox Enterprise" />
+        </div>
+        <div class="gallery-item">
+          <img src="assests/cooler-1 (1).jpeg" alt="CoolBox Residential Model" />
+        </div>
+        <div class="gallery-item">
+          <img src="assests/cooler-1 (2).jpeg" alt="CoolBox Home Cooler" />
+        </div>
+        <div class="gallery-item">
+          <img src="assests/cooler-1 (3).jpeg" alt="CoolBox Compact Unit" />
+        </div>
+        <div class="gallery-item">
+          <img src="assests/cooler-1 (4).jpeg" alt="CoolBox Efficient Cooling" />
+        </div>
+        <div class="gallery-item">
+          <img src="assests/cooler-1 (5).jpeg" alt="CoolBox Premium Model" />
+        </div>
       </div>
     </div>
     
@@ -2100,6 +2520,7 @@
       </div>
     </div>
   </div>
+
 </section>
 
 <!-- ═══ TESTIMONIALS ══════════════════════════════════════ -->
@@ -2275,7 +2696,7 @@
         <div class="info-card">
           <div class="info-icon">📞</div>
           <h3>Call Us Directly</h3>
-          <p><a href="tel:9039835967">9039835967</a> (D.K. Sahu)<br><a href="tel:8871882661">8871882661</a> (Srijan Sahu)</p>
+          <p><a href="tel:8871882661">8871882661</a> (Srijan Sahu)<br><a href="tel:8718877145">8718877145</a><br><a href="tel:9039835967">9039835967</a> (D.K. Sahu)</p>
         </div>
        
         <div class="info-card">
@@ -2319,8 +2740,9 @@
           </li>
           <li style="margin-bottom:.8rem;">
             <strong style="color:rgba(255,255,255,.7);font-size:.8rem;">📞 Phone</strong><br>
-            <a href="tel:9039835967">9039835967</a> (D.K. Sahu)<br>
-            <a href="tel:8871882661">8871882661</a> (Srijan Sahu)
+            <a href="tel:8871882661">8871882661</a> (Srijan Sahu)<br>
+            <a href="tel:8718877145">8718877145</a><br>
+            <a href="tel:9039835967">9039835967</a> (D.K. Sahu)
           </li>
           <li style="margin-bottom:.8rem;">
             <strong style="color:rgba(255,255,255,.7);font-size:.8rem;">📧 Email</strong><br>
@@ -2328,7 +2750,7 @@
           </li>
           <li>
             <strong style="color:rgba(255,255,255,.7);font-size:.8rem;">⏰ Hours</strong><br>
-            <span style="color:rgba(255,255,255,.85);">Mon-Sat: 10:00 AM – 7:00 PM</span>
+            <span style="color:rgba(255,255,255,.85);">Mon-Sat: 11:00 AM – 10:00 PM</span>
           </li>
         </ul>
       </div>
@@ -2386,12 +2808,17 @@
     document.getElementById('mobileMenu').classList.remove('open');
   }
 
-  // ── Product Tabs
+  // ── Product Tabs (Legacy - can be removed if not needed)
   function switchTab(tab) {
-    document.getElementById('panel-home').style.display = tab === 'home' ? 'grid' : 'none';
-    document.getElementById('panel-industrial').style.display = tab === 'industrial' ? 'grid' : 'none';
-    document.getElementById('tab-home').classList.toggle('active', tab === 'home');
-    document.getElementById('tab-industrial').classList.toggle('active', tab === 'industrial');
+    const homePanel = document.getElementById('panel-home');
+    const industrialPanel = document.getElementById('panel-industrial');
+    if (homePanel) homePanel.style.display = tab === 'home' ? 'grid' : 'none';
+    if (industrialPanel) industrialPanel.style.display = tab === 'industrial' ? 'grid' : 'none';
+    
+    const homeTab = document.getElementById('tab-home');
+    const industrialTab = document.getElementById('tab-industrial');
+    if (homeTab) homeTab.classList.toggle('active', tab === 'home');
+    if (industrialTab) industrialTab.classList.toggle('active', tab === 'industrial');
   }
   // close on outside click
   document.addEventListener('click', (e) => {
